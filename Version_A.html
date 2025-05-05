@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenEarth - Protecting Our Planet</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            color: #2e7d32;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #2e7d32;
+        }
+        
+        .donate-btn {
+            background-color: #2e7d32;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .donate-btn:hover {
+            background-color: #1b5e20;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 20px 100px;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background-color: #1b5e20;
+            transform: translateY(-3px);
+        }
+        
+        /* Story Section */
+        .story {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .story-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .story-text {
+            flex: 1;
+        }
+        
+        .story-text h2 {
+            font-size: 36px;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+        
+        .story-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .story-image {
+            flex: 1;
+        }
+        
+        .story-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Testimonial Section */
+        .testimonial {
+            background-color: #f1f8e9;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .testimonial h2 {
+            font-size: 36px;
+            color: #2e7d32;
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-text {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2e7d32;
+        }
+        
+        /* Call to Action Section */
+        .cta-section {
+            background-color: #2e7d32;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-section .cta-btn {
+            background-color: white;
+            color: #2e7d32;
+        }
+        
+        .cta-section .cta-btn:hover {
+            background-color: #f1f8e9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #aed581;
+        }
+        
+        .footer-col p, .footer-col a {
+            display: block;
+            color: #ddd;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a:hover {
+            color: #aed581;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: #ddd;
+            font-size: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero {
+                padding: 150px 20px 80px;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .story-container {
+                flex-direction: column;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="Images_A/Logo.png" alt="GreenEarth Logo">
+                <h1>GreenEarth</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Get Involved</a></li>
+                    <li><a href="#" class="donate-btn">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('Images_A/image.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="container">
+            <h2>Creating a Greener Tomorrow</h2>
+            <p>For over a decade, GreenEarth has been fighting to protect our planet's most precious resources. Join us in our mission to restore balance to our home.</p>
+            <a href="#" class="cta-btn">Join Our Mission</a>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="container story-container">
+            <div class="story-text">
+                <h2>Meet Lucia: A Guardian of the Forest</h2>
+                <p>When Lucia's ancestral forest in the Amazon was threatened by illegal logging, she didn't stand by silently. At just 19 years old, she organized her community and reached out to GreenEarth for support.</p>
+                <p>Together, we implemented sustainable forestry practices, empowered indigenous guardians, and successfully protected over 50,000 acres of pristine rainforest that serves as home to thousands of species found nowhere else on Earth.</p>
+                <p>Lucia's story is just one of many where passion and partnership have created lasting change. With your help, we can write more success stories like hers.</p>
+            </div>
+            <div class="story-image">
+                <img src="Images_A/image2.png" alt="Forest conservation efforts">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <h2>Voices of Change</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"When I joined GreenEarth as a volunteer, I never imagined the impact we could make together. Today, I see children playing in parks that were once landfills, and communities thriving with clean water where pollution once dominated. This isn't just environmental work—it's about restoring dignity and hope to people and places forgotten by others."</p>
+                <p class="testimonial-author">- Michael Chen, GreenEarth Volunteer Since 2018</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Be Part of the Solution</h2>
+            <p>Every action, no matter how small, contributes to the healing of our planet. Your support enables us to continue our vital work protecting endangered ecosystems and empowering local communities.</p>
+            <a href="#" class="cta-btn">Donate Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>GreenEarth is committed to protecting our planet through conservation, education, and sustainable practices.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>123 Earth Way</p>
+                <p>Green City, EH 12345</p>
+                <p>info@greenearth.org</p>
+                <p>(555) 123-4567</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="#">Our Mission</a>
+                <a href="#">Current Projects</a>
+                <a href="#">Success Stories</a>
+                <a href="#">Get Involved</a>
+                <a href="#">Donate</a>
+            </div>
+            <div class="footer-col">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2025 GreenEarth. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
